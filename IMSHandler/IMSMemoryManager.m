@@ -180,14 +180,10 @@ extern inline BOOL wipeWrapper(NSObject* obj, NSString* ignore) {
 
 // Return NO if wipe failed
 extern inline BOOL wipe(NSObject* obj) {
-    NSLog(@"Object pointer: %p", obj);
     if(handleType(obj, @"", &wipeWrapper) == YES) {
         if (getSize(obj) > 0){
-            NSLog(@"WIPE OBJ");
             memset(getStart(obj), 0, getSize(obj));
         }
-        else
-            NSLog(@"WIPE: Unsupported Object.");
     }
     return YES;
 }
