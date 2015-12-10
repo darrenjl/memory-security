@@ -169,7 +169,6 @@ inline BOOL handleType(NSObject* obj, NSString* pass, traversalFunc f) {
         }
     }
     
-    NSLog(@"Done with type handler %@\n\n", ret?@"YES":@"NO");
     return ret;
 }
 
